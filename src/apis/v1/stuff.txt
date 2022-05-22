@@ -1,0 +1,17 @@
+const user = require("./models/user");
+const asyncHandler = require("./helpers/asyncHandler");
+app.post(
+  "/create",
+  asyncHandler(async (req, res, next) => {
+    const { username, password, email, fullname, created_date } = req.body;
+    const account = new user({
+      username,
+      password,
+      email,
+      fullname,
+      created_date: new Date(created_date),
+    });
+    await account.save();
+    res.json(account);
+  })
+);

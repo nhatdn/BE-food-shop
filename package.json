@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "nodemon ./src/apis/v1/app.js",
     "prettier": "prettier --write \"**/*.{js,json,css,scss,less,md,ts,html,component.html}\""
   },
   "keywords": [],

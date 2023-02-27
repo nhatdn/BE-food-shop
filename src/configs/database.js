@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const configs = require("./configs");
+mongoose.set('strictQuery', true);
 const DBconnection = async () => {
   const conn = await mongoose
     .connect(configs.MONGODB_URI, {

@@ -7,6 +7,12 @@ const express = require("express");
 const app = express();
 const auth = require("./routes/auth.routes");
 const body_parser = require("body-parser");
+var redis = require('redis');
+var JWTR =  require('jwt-redis').default;
+var redisClient = redis.createClient();
+var jwtr = new JWTR(redisClient);
+global.jwtr = jwtr;
+
 module.exports = {
   app,
   auth,

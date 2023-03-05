@@ -67,4 +67,7 @@ const userSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("user", userSchema);
+module.exports = {
+  users: mongoose.model("user", userSchema),
+  usersNotAuth: mongoose.model("usersNotAuth", userSchema)
+}
